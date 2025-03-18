@@ -62,7 +62,7 @@ The class diagram provides an overview of the main classes and their interaction
 
 ## Project Proposal
 
-For more detailed information about the project, including the proposal, timeline, and future enhancements, visit our [Project Proposal Website](link-to-your-project-proposal-website).
+For more detailed information about the project, including the proposal, timeline, and future enhancements, visit our [Project Proposal Website](https://www.overleaf.com/read/rsxyfkpcjctk#459e40).
 
 ## Installation
 
