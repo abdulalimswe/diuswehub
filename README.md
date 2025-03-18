@@ -58,7 +58,7 @@ The database diagram illustrates the structure of the database, including tables
 
 The class diagram provides an overview of the main classes and their interactions within the application.
 
-![Class Diagram](ima/classDiagram.png)
+![Class Diagram](img/classDiagram.png)
 
 ## Project Proposal
 
