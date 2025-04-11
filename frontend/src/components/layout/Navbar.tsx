@@ -33,7 +33,7 @@ const Navbar = () => {
     // navigate("/login");
   };
 
-  const dashboardPath = user?.role === "admin" ? "/admin" : "/user";
+  const dashboardPath = user?.role === "admin" ? "/admin" : "/user/profile";
 
   useEffect(() => {
     const handleResize = () => {

@@ -42,8 +42,8 @@ const getAllEvent = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, vo
     });
 }));
 const getASpecificEvent = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { productId } = req.params;
-    const result = yield event_service_1.EventServices.getASpecificEventFromDB(productId);
+    const { eventId } = req.params;
+    const result = yield event_service_1.EventServices.getASpecificEventFromDB(eventId);
     res.status(200).json({
         message: 'Get a specific event successfully',
         status: true,
@@ -52,8 +52,10 @@ const getASpecificEvent = (0, catchAsync_1.default)((req, res) => __awaiter(void
 }));
 //  updateEvent
 const updateEvent = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { productId } = req.params;
-    const result = yield event_service_1.EventServices.updateEventIntoDB(productId, req.body);
+    const { eventId } = req.params;
+    console.log(req.body);
+    console.log(eventId);
+    const result = yield event_service_1.EventServices.updateEventIntoDB(eventId, req.body);
     (0, sendResponse_1.default)(res, {
         statusCode: http_status_1.default.OK,
         success: true,
@@ -63,8 +65,8 @@ const updateEvent = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, vo
 }));
 // detele Event
 const deleteEvent = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { productId } = req.params;
-    yield event_service_1.EventServices.deleteEventFromDB(productId);
+    const { eventId } = req.params;
+    yield event_service_1.EventServices.deleteEventFromDB(eventId);
     res.send({
         message: 'Event deleted successfully',
         status: true,

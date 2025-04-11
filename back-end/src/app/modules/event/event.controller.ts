@@ -2,6 +2,8 @@ import { EventServices } from './event.service';
 import catchAsync from '../../utils/catchAsync';
 import sendResponse from '../../utils/sendResponse';
 import httpStatus from 'http-status';
+import { request } from 'http';
+import { log } from 'console';
 
 const createEvent = catchAsync(async (req, res) => {
 
@@ -40,8 +42,8 @@ const getAllEvent = catchAsync(async (req, res) => {
 });
 
 const getASpecificEvent = catchAsync(async (req, res) => {
-  const { productId } = req.params;
-  const result = await EventServices.getASpecificEventFromDB(productId);
+  const { eventId } = req.params;
+  const result = await EventServices.getASpecificEventFromDB(eventId);
   res.status(200).json({
     message: 'Get a specific event successfully',
     status: true,
@@ -51,8 +53,10 @@ const getASpecificEvent = catchAsync(async (req, res) => {
 
 //  updateEvent
 const updateEvent = catchAsync(async (req, res) => {
-  const { productId } = req.params;
-  const result = await EventServices.updateEventIntoDB(productId, req.body);
+  const { eventId } = req.params;
+  console.log(req.body);
+  console.log(eventId);
+  const result = await EventServices.updateEventIntoDB(eventId, req.body);
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
@@ -63,8 +67,8 @@ const updateEvent = catchAsync(async (req, res) => {
 
 // detele Event
 const deleteEvent = catchAsync(async (req, res) => {
-  const { productId } = req.params;
-  await EventServices.deleteEventFromDB(productId);
+  const { eventId } = req.params;
+  await EventServices.deleteEventFromDB(eventId);
 
   res.send({
     message: 'Event deleted successfully',

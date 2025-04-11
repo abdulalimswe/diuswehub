@@ -5,33 +5,24 @@ export type User = {
   address: string;
 };
 
-export type Product = {
-  product: string;
-  quantity: number;
+export type Event = {
+  event: string;
   _id: string;
 };
 
-export type Transaction = {
-  id: string;
-  transactionStatus: string | null;
-  bank_status: string;
-  date_time: string;
-  method: string;
-  sp_code: string;
-  sp_message: string;
-};
-
-export type TOrder = {
+export type TEvent = {
+  _id?: string;
+  name: string;
+  eventImg?: string;
+  eventHost: string;
+  description: string;
   user: User;
   email: string;
-  products: Product[];
+  events: Event[];
   details: string;
-  quantity: number;
-  totalPrice: number;
-  transaction: Transaction;
   date: string;
   status: string;
-  _id: string;
   createdAt: string;
   updatedAt: string;
+  
 };

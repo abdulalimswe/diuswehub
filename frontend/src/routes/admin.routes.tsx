@@ -8,6 +8,7 @@ import {
   UserAddOutlined,
 } from "@ant-design/icons";
 import EventsManagement from "../pages/admin/EventsManagement";
+import UserEventsManagement from "../pages/admin/UserEventsManagement";
 import ReqEventsManagement from "../pages/admin/ReqEventsManagement";
 import UsersManagements from "../pages/admin/UsersManagements";
 import AdminProfile from "../pages/admin/AdminProfile";
@@ -44,6 +45,12 @@ export const adminPaths = [
         name: "Post Events",
         path: "post-events",
         element: <EventsManagement />,
+        icon: <AppstoreOutlined />,
+      },
+      {
+        name: "User Events",
+        path: "user-events",
+        element: <UserEventsManagement />,
         icon: <AppstoreOutlined />,
       },
       {

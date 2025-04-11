@@ -1,4 +1,4 @@
-import { TOrder, TQueryParam, TResponseRedux } from "../../../types";
+import { TEvent, TQueryParam, TResponseRedux } from "../../../types";
 import { baseApi } from "../../api/baseApi";
 
 const customerOrderApi = baseApi.injectEndpoints({
@@ -32,7 +32,7 @@ const customerOrderApi = baseApi.injectEndpoints({
           params: params,
         };
       },
-      transformResponse: (response: TResponseRedux<TOrder[]>) => {
+      transformResponse: (response: TResponseRedux<TEvent[]>) => {
         return {
           data: response.data,
           meta: response.meta,

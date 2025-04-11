@@ -40,6 +40,7 @@ const updateEventIntoDB = async (_id: string, payload: Partial<TEvent>) => {
     new: true,
     runValidators: true,
   });
+  console.log(result);
   return result;
 };
 

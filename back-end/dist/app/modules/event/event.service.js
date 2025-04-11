@@ -48,6 +48,7 @@ const updateEventIntoDB = (_id, payload) => __awaiter(void 0, void 0, void 0, fu
         new: true,
         runValidators: true,
     });
+    console.log(result);
     return result;
 });
 const deleteEventFromDB = (_id) => __awaiter(void 0, void 0, void 0, function* () {
