@@ -12,6 +12,8 @@ import VerificationEvent from "../pages/order/VerificationOrder";
 import MainLayout from "../components/layout/MainLayout";
 import CPSWE from "../pages/competitiveProgramming/cpswe";
 
+import Posts from "../pages/posts/Posts";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -39,6 +41,14 @@ const router = createBrowserRouter([
       </ProtectedRoute>
     ),
     children: routesGenerator(customerPaths),
+  },
+  {
+    path: "/posts",
+    element: (
+      <ProtectedRoute role="user">
+        <Posts />
+      </ProtectedRoute>
+    ),
   },
   {
     path: "/login",
